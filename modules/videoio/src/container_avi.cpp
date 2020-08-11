@@ -511,6 +511,7 @@ std::vector<char> AVIReadContainer::readFrame(frame_iterator it)
 
     RiffChunk chunk;
     *(m_file_stream) >> chunk;
+    //导致打开大视频失败，限制了最大缓冲
     // CV_Assert(chunk.m_size <= 0xFFFF);
 
     std::vector<char> result;
